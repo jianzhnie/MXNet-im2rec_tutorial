@@ -1,8 +1,11 @@
 学完目标检测之后一直想要用自己的数据跑一下模型看看，结果被im2rec坑了好久，看了网上的一些帖子，又回头看了一下源码，终于算是搞懂了。在这里写一下自己遇到的那些坑。
-im2rec.py可以实现两种功能，一是制作相应的lst，而是制作rec文件。
-不管对于图片分类还是目标识别问题，均可以通过lst（通过ImageDetIter()中的path_imglist读取）和rec（通过ImageDetIter()中的path_reclist和path_idxlist读取）读取文件。
+
+im2rec.py可以实现两种功能，一是制作相应的lst，而是制作rec文件。不管对于图片分类还是目标识别问题，均可以通过lst（通过ImageDetIter()中的path_imglist读取）和rec（通过ImageDetIter()中的path_reclist和path_idxlist读取）读取文件。
+
 1.使用im2rec制作lst文件
+
 调用make_list()方法获得的,其中涉及四个参数：
+
 * recursive：是否递归访问子目录，如果存在多个目录可以设置该参数
 * list：:脚本默认为False，所以制作lst时应设置为True
 * prefix：需要生成的lst文件的前缀
